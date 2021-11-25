@@ -1,0 +1,55 @@
+null FUNCION print_complex(a:ARRAY[2])
+    INICIO
+        ESCRIBIR a[0]
+        ESCRIBIR a[1]
+    FIN
+
+null FUNCION read_complex(a:ARRAY[2])
+    INICIO
+        ESCRIBIR "Ingresa el valor real"
+        LEER a[0]
+        ESCRIBIR "Ingresa el valor imaginario"
+        LEER a[1]
+    FIN
+
+null FUNCION suma(c1:ARRAY[2],c2:ARRAY[2],c3:ARRAY[2])
+    INICIO
+    i:ENTERO
+        PARA i<-0 HASTA 2 CON PASO 1 HACER
+            c3[i]<-c1[i]+c2[i]
+        FINPARA
+    FIN
+
+null FUNCION resta(c1:ARRAY[2],c2:ARRAY[2],c3:ARRAY[2])
+    INICIO
+    i:ENTERO
+        PARA i<-0 HASTA 2 CON PASO 1 HACER
+            c3[i]<-c1[i]-c2[i]
+        FINPARA 
+    FIN
+
+null FUNCION conjugado(c1:ARRAY[2],c2:ARRAY[2])
+    INICIO
+        c2[0]<-c1[0]
+        c2[1]<-c1[1]
+    FIN
+
+null FUNCION escalar_multi(a:REAL,c1:ARRAY[2],c2:ARRAY[2])
+    INICIO
+    i:ENTERO
+        PARA i<-0 HASTA 2 CON PASO 1 HACER
+            c2[i]<-a*c1[i]
+        FINPARA 
+    FIN
+
+null FUNCION multi(c1:ARRAY[2],c2:ARRAY[2],c3:ARRAY[2])
+    INICIO
+        c3[0]<-(c1[0] * c2[0]) - (c1[1] * c2[1])
+        c3[1]<-(c1[0] * c2[1]) + (c1[1] * c2[0])
+    FIN
+
+null FUNCION division(c1:ARRAY[2],c2:ARRAY[2],c3:ARRAY[2])
+    INICIO
+        c3[0]<-((c1[0] * c2[0]) + (c1[1] * c2[1])) / (c2[0] * c2[0] + c2[1] * c2[1])
+        c3[1]<-(((-1) * c1[0] * c2[1]) + (c1[1] * c2[0])) / (c2[0] * c2[0] + c2[1] * c2[1])
+    FIN
